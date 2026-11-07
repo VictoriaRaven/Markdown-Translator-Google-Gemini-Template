@@ -2,19 +2,24 @@ name: Markdown Translator - Google Gemini TEMPLATE
 description: Automatically translate README.md into any language(s) using Google Gemini AI.
 author: VictoriaRaven
 
-branding: icon: globe color: blue
+branding:
+  icon: globe
+  color: blue
+  
+inputs: 
+  gemini_api_key: 
+    description: Google Gemini API key stored securely using GitHub Secrets. 
+    required: true
 
-inputs: gemini_api_key: description: Google Gemini API key stored securely using GitHub Secrets. required: true
-
-runs: using: composite steps:
-
-- name: Set up Node.js 24
-  uses: actions/setup-node@v4
-  with:
-    node-version: 24
-
-- name: Run Google Gemini README Translator
-  shell: bash
-  env:
-    GEMINI_API_KEY: ${{ inputs.gemini_api_key }}
-  run: node "${{ github.action_path }}/scripts/translate-readme.mjs"
+runs:
+  using: composite
+  steps:
+    - name: Set up Node.js 24
+      uses: actions/setup-node@v4
+      with:
+        node-version: 24
+    - name: Run Google Gemini README Translator
+      shell: bash
+      env:
+        GEMINI_API_KEY: ${{ inputs.gemini_api_key }}
+      run: node "${{ github.action_path }}/scripts/translate-readme.mjs"
