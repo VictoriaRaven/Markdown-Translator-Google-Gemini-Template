@@ -1,4 +1,4 @@
-name: "Markdown Translator - Google Gemini" description: "Automatically translate README.md into French, Russian, and Spanish using Google Gemini AI." author: "YOUR-GITHUB-USERNAME"
+name: "Markdown Translator - Google Gemini" description: "Automatically translate README.md into French, Russian, and Spanish using Google Gemini AI." author: "VictoriaRaven"
 
 branding: icon: "globe" color: "blue"
 
