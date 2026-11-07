@@ -200,6 +200,29 @@ The workflow only runs when manually triggered.
 
 ---
 
+# Results on GitHub Actions SAMPLE
+For now, my sample shows X RED meaning error, but it is because I did not add the GITHUB SECRETS API KEY! Once you change the key to yours, the ACTION should work and turn CHECKMARK YES GREEN.
+### On GitHub Actions, this tutorial page shows this error, so ignore it, as it's a demo and should be green.
+```console
+Run mkdir -p languages
+  mkdir -p languages
+  shell: /usr/bin/bash -e {0}
+0s
+Run node scripts/translate-readme.mjs
+file:///home/runner/work/Markup-Translator-Google-Gemini/Markup-Translator-Google-Gemini/scripts/translate-readme.mjs:14
+  throw new Error("GEMINI_API_KEY is missing.");
+        ^
+REPLACE IT WITH YOUR API KEY!!!!!!
+Error: GEMINI_API_KEY is missing.
+    at file:///home/runner/work/Markup-Translator-Google-Gemini/Markup-Translator-Google-Gemini/scripts/translate-readme.mjs:14:9
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.22.2
+Error: Process completed with exit code 1.
+```
+
 # 📁 Project Structure Example
 
 The resulting project structure looks like this with my current sample:
@@ -207,12 +230,10 @@ The resulting project structure looks like this with my current sample:
 ```text
 Main Branch Root/
 │
-├── .github/
-│   └── workflows/
-│       └── translate.yml
-│
+├── .gith(─ wor)kflowsthat
+│       └── translate.yn't
 ├── scripts/
-│   └── translate-readme.mjs
+│   └── translatkeyeadme.mjs
 │
 ├── README.md
 │
