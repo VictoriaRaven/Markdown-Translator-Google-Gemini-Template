@@ -1,12 +1,20 @@
 # Markup-Translator-Google-Gemini
-Markup Translator with Google Gemini, teaches you how to create an automated Readme.md translator using only a Free Google API Gemini Key (Google account) and your GitHub Account. Tutorial to make Javascript and .github workflow with Yaml file for Actions to automate Free translations for README.md files without 3 party GitHub Community Repos Tool
+## Copyright Usage and License
+I have put a license for this repository in case the company wishes to use my work. Other peers must also comply with the license.
 
+Please read [MIT license](LICENSE.md) for details on the license and what you can do with this code.
+
+Other Links:  
+- [GitHub Copyright and Licenses](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
+- [GitHub Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)
+
+# Quick Information
+Markup Translator with Google Gemini AI teaches you how to create an automated README.md translator using only a Free Google Gemini API key (Google account) and your GitHub Account. Tutorial to make a JavaScript and .github workflow with a YAML file for Actions to automate Free translations for README.md files without any third-party GitHub Community Repository Tools, except Google.
 
 # 🌍 Automated README Translation with Google Gemini AI
-
-This MIT open source Tutorial teaches you how to include or add the **Google Gemini API** through Google AI Studio to translate `README.md` into multiple languages automatically using GitHub Actions.
+This MIT open-source tutorial teaches you how to include or add the **Google Gemini API** through Google AI Studio to translate `README.md` into multiple languages automatically using GitHub Actions.
 The translation system was designed to reduce API usage, avoid unnecessary translation requests, and keep all translated README files organized in a dedicated `languages/` directory.
-Instead of translating the README every time code is pushed to GitHub, this workflow runs **manually whenever I choose to trigger it through GitHub Actions**.
+Instead of translating the README every time you push code to GitHub, this workflow runs manually whenever you trigger it through GitHub Actions.
 
 ## ✨ Features
 
@@ -33,7 +41,7 @@ Instead of translating the README every time code is pushed to GitHub, this work
 
 ## 🌎 Supported Languages
 
-The current translation configuration supports:
+The current translation configuration supports any language, as it uses an AI model. Examples of the samples I used below:
 
 | Language | Code | Output file |
 | --- | --- | --- |
@@ -86,7 +94,7 @@ Useful links:
 
 ## 2\. Configure GitHub Secrets
 
-The Gemini API key must be stored securely using GitHub Secrets.
+The Gemini API key must be stored securely in GitHub Secrets.
 
 Never directly insert your API key into your JavaScript files or GitHub Actions workflow.
 
@@ -121,12 +129,12 @@ It performs the following operations:
 
 1. Reads the original `README.md`.
 2. Sends the README content to Gemini.
-3. Requests [Your Languages Here] My example: French, Russian, and Spanish translations in one API request.
+3. Requests [Your Languages Here]. My example: French, Russian, and Spanish translations in one API request.
 4. Requests structured JSON output.
-5. Validates that all translations 1 or more languages are present.
+5. Validates that all translations in 1 or more languages are present.
 6. Saves each translation into its corresponding Markdown file.
 
-The script also includes automatic retries for temporary API errors, such as HTTP 503 (Service Unavailable), HTTP 429 (Too Many Requests), and other temporary server errors.
+The script also retries automatically for temporary API errors, such as HTTP 503 (Service Unavailable), HTTP 429 (Too Many Requests), and other temporary server errors.
 
 This helps prevent temporary Gemini API problems from immediately failing the entire workflow.
 
@@ -144,7 +152,7 @@ The translation script uses the following model configuration:
 
 `gemini-3.5-flash-lite`
 
-The model is selected to provide lightweight text generation suitable for README translation.
+We selected this model for lightweight text generation suitable for README translation.
 
 The model name is configured in:
 
@@ -161,13 +169,13 @@ Create the following file:
 The workflow uses:
 
 - `workflow_dispatch` to enable manual execution.
-- Use new version of **Node.js 24** to run the translation script as Node 12 and 20 are deappreciated and removed in 2026.
-- GitHub Secrets to access the Gemini API key.
-- Git to commit and push the generated translations.
+- Use the new version of **Node.js 24** to run the translation script, as Node 12 and 20 are deprecated and will be removed in 2026.
+- Use GitHub Secrets to access the Gemini API key.
+- Use Git to commit and push the generated translations.
 
 The workflow does not automatically execute when pushing code to `main` or `master`.
 
-This is intentional if you want to control when Gemini API requests are made and avoid unnecessary usage of the free-tier quota.
+This is intentional if you want to control when Gemini API requests are made and avoid unnecessary free-tier usage.
 
 ## 6\. Run the Translation Manually
 
@@ -186,7 +194,7 @@ GitHub Actions will then:
 2. Set up Node.js.
 3. Read the original `README.md`.
 4. Send one translation request to Gemini.
-5. Receive [Your Languages] ex: French, Russian, and Spanish translations.
+5. Receive [Your Languages], e.g., French, Russian, and Spanish translations.
 6. Validate the returned translations.
 7. Save the three translated Markdown files.
 8. Commit and push the changes to the repository.
@@ -197,9 +205,7 @@ The workflow only runs when manually triggered.
 
 # 📁 Project Structure Example
 
-The resulting project structure looks like this:
-
-text
+The resulting project structure looks like this with my current sample:
 
 ```text
 Main Branch Root/
@@ -235,27 +241,27 @@ Main Branch Root/
 
 ---
 
-# 💡 Why To Chose This Method
+# 💡 Why Choose This Method: API KEYS
 
-Using old Community Tools fron other repositories with  GitHub Action to generate README translations are old and deappreciated with the new Node.js Ver.24 and removing the Ver.20
-Benifits would me to gain control over the translation process, API usage, and output directory.
-Rather than depending on an external translation action from GitHub Tool Repositories (Communities), You Yourself Can Build a small custom translation script using Google's Gemini API.
+Using old Community Tools from other repositories with  GitHub Actions to generate README translations is outdated and deprecated with the new Node.js v24 and the removal of v20
+The benefits include gaining control over the translation process, API usage, and the output directory.
+Instead of relying on an external translation action from GitHub Tool Repositories (Communities), you can build a small custom translation script using Google's Gemini API.
 
 ### Main reasons for this approach
 
 **1\. Free-tier API usage**
 
-Using Google AI Studio allows me to access eligible Gemini models through the free API tier, subject to Google's usage limits.
+Google AI Studio lets me access eligible Gemini models through the free API tier, subject to Google's usage limits.
 
 **2\. Fewer API requests**
 
 The original approach required three separate API requests for three languages.
-The new implementation combines all three translations into one request, reducing request count.
+The new implementation combines all three translations into one request, reducing the number of requests.
 
 **3\. Manual control**
 
-Goals are to not allow Gemini to translate my README every time you push a code change.
-By doing this way, You can manually trigger the translation workflow only when you update your README and want to regenerate its translations.
+The goal is not to allow Gemini to translate my README every time you push a code change.
+This lets you manually trigger the translation workflow only when you update your README and want to regenerate its translations.
 
 **4\. Better error handling**
 
@@ -265,11 +271,11 @@ It also checks that Gemini returned all three translations before writing the ou
 
 **5\. Organized file management**
 
-All translations are stored in one directory instead of cluttering the repository root.
+All translations are stored in one directory, keeping the repository root clean.
 
 **6\. No external translation action dependency**
 
-The translation process communicates directly with Google's Gemini API instead of relying on a third-party GitHub translation action Free Tools in the Community.
+The translation process communicates directly with Google's Gemini API instead of relying on a third-party GitHub translation action, Free Tools in the Community.
 
 ---
 
@@ -302,7 +308,7 @@ You can monitor your usage through:
 
 ---
 
-# ⚠️ Important Notes With API KEYS and Free-Tier Limitations
+# ⚠️ WARNINGS: Important Notes With API KEYS and Free-Tier Limitations
 
 - Never publish your Gemini API key.
 - Always store the API key in GitHub Secrets.
@@ -331,11 +337,11 @@ You can monitor your usage through:
 
 ---
 
-**Final Result:** Yay! You have complted the tutoriL! A manually controlled README translation system powered by Google Gemini AI, using one API request to generate three language translations, with automatic retries, organized output files, and automatic GitHub commits.
+**Final Result:** Yay! You have completed the tutorial! A manually controlled README translation system powered by Google Gemini AI, using one API request to generate language translations, with automatic retries, organized output files, and automatic GitHub commits.
 
 ## A few important notes about your implementation
 
-1. Free tier: Google's free tier has model-specific limits and availability. Google also states that free-tier content may be used to improve its products, so avoid sending confidential material.
+1. Free tier: Google's free tier has model-specific limits and availability. Google also states that it may use free-tier content to improve its products, so avoid sending confidential material.
    Google AI for Developers
    +1
 2. Model: Your `gemini-3.5-flash-lite` model should be described as the model currently configured in your script, not a permanently guaranteed free model.
@@ -343,8 +349,9 @@ You can monitor your usage through:
 
 Useful official references:
 
-- [Create a Gemini API key](<https://aistudio.google.com/app/apikey?utm_source=chatgpt.com>)
-- [Gemini API free-tier pricing](<https://ai.google.dev/gemini-api/docs/pricing?utm_source=chatgpt.com>)
-- [Gemini API usage limits](<https://ai.google.dev/gemini-api/docs/rate-limits?utm_source=chatgpt.com>)
-- [GitHub Actions documentation](<https://docs.github.com/en/actions?utm_source=chatgpt.com>)
+- [Create a Gemini API key](https://aistudio.google.com/app/apikey)
+- [Gemini API free-tier pricing](https://ai.google.dev/gemini-api/docs/pricing)
+- [Gemini API usage limits](https://ai.google.dev/gemini-api/docs/rate-limits)
+- [GitHub Actions documentation](https://docs.github.com/en/actions)
+- **NOTE: THIS TUTORIAL WAS BUILT WITH BOTH AI INTEGRATION (CHATGPT) AND MANUAL USER MODIFICATIONS TO MAKE IT READABLE!!! IT'S WHY THIS PUBLIC COMMUNITY TOOL REPOSITORY IS USING THE MIT LICENSE AND IS ALSO OPEN SOURCE (NO CREDIT TO ME, NO CHATGPT, AND FOR EDUCATIONAL USAGES!!!)**
 
