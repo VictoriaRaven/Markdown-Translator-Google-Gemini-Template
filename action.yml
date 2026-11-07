@@ -1,0 +1,7 @@
+name: "Markdown Translator - Google Gemini" description: "Automatically translate README.md into French, Russian, and Spanish using Google Gemini AI." author: "YOUR-GITHUB-USERNAME"
+
+branding: icon: "globe" color: "blue"
+
+inputs: gemini_api_key: description: "Google Gemini API key. Pass this using GitHub Secrets." required: true
+
+runs: using: "node24" main: "scripts/translate-readme.mjs"
