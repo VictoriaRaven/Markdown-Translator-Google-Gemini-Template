@@ -1,0 +1,48 @@
+
+name: Translate README with Gemini
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24.x
+
+      - name: Prepare languages folder
+        run: mkdir -p languages
+
+      # One Gemini request for all three languages
+      - name: Translate README into French, Russian and Spanish
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node scripts/translate-readme.mjs
+
+      # Configure Git
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # Commit all translations together
+      - name: Commit and push translations
+        run: |
+          git add languages/
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Update translated READMEs"
+            git push
+          else
+            echo "No translation changes."
+          fi
