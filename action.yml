@@ -1,4 +1,6 @@
-name: Markdown Translator - Google Gemini description: Automatically translate README.md into any language(s) using Google Gemini AI. author: VictoriaRaven
+name: Markdown Translator - Google Gemini TEMPLATE
+description: Automatically translate README.md into any language(s) using Google Gemini AI.
+author: VictoriaRaven
 
 branding: icon: globe color: blue
 
