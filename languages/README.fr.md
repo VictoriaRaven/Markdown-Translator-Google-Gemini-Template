@@ -1,0 +1,3 @@
+# Your translated README.md is translated into French based on the region fr... based on the filename README.fr.md
+## It Will Repeat If Asked To Translate More Than 1 Language...
+## THIS IS A SAMPLE OF WHERE THE FILES WILL BE!
