@@ -1,0 +1,3 @@
+# Your translated README.md is translated into Spanish based on the region sp... based on the filename README.sp.md
+## It Will Repeat If Asked To Translate More Than 1 Language...
+## THIS IS A SAMPLE OF WHERE THE FILES WILL BE!
