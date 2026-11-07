@@ -1,9 +1,6 @@
 # Markup-Translator-Google-Gemini
 ## Copyright Usage and License
-I have put a license for this repository in case the company wishes to use my work. Other peers must also comply with the license.
-
 Please read [MIT license](LICENSE.md) for details on the license and what you can do with this code.
-
 Other Links:  
 - [GitHub Copyright and Licenses](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository)
 - [GitHub Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)
