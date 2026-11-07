@@ -222,7 +222,48 @@ Error: GEMINI_API_KEY is missing.
 Node.js v24.22.2
 Error: Process completed with exit code 1.
 ```
+# If you used github actions marketplace please change your yml and the javascripts to match with the templates!
+```console
+How another developer will use your Action
+Once published, another developer could add this to their workflow:
 
+
+yaml
+name: Translate README
+
+on:
+  workflow_dispatch:
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Translate README with Gemini
+        uses: YOUR-GITHUB-USERNAME/Markdown-Translator-Google-Gemini@v1
+        with:
+          gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Commit translations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add languages/
+          git diff --cached --quiet || git commit -m "Update README translations"
+          git push
+The consuming repository needs the Gemini secret and write permission.
+
+```
+
+## This is NOT WHAT YOU WANT TO DO! DO NOT USE MY USERNAME AND INSTEAD COPY THE TEMPLATE OR CODE TO YOUR CUSTOM REPOSITORY!!!
+- I made it this way so that it doesn't rely on my GitHub to use the api keys or data, but you can use yours by not using the method code above!!!
+- 
 # 📁 Project Structure Example
 
 The resulting project structure looks like this with my current sample:
