@@ -1,4 +1,4 @@
-# Markup-Translator-Google-Gemini
+# Markdown-Translator-Google-Gemini
 ## Copyright Usage and License
 Please read [MIT license](LICENSE.md) for details on the license and what you can do with this code.
 Other Links:  
@@ -6,7 +6,7 @@ Other Links:
 - [GitHub Terms of Service](https://docs.github.com/en/site-policy/github-terms/github-terms-of-service)
 
 # Quick Information
-Markup Translator with Google Gemini AI teaches you how to create an automated README.md translator using only a Free Google Gemini API key (Google account) and your GitHub Account. Tutorial to make a JavaScript and .github workflow with a YAML file for Actions to automate Free translations for README.md files without any third-party GitHub Community Repository Tools, except Google.
+Markdown Translator with Google Gemini AI teaches you how to create an automated README.md translator using only a Free Google Gemini API key (Google account) and your GitHub Account. Tutorial to make a JavaScript and .github workflow with a YAML file for Actions to automate Free translations for README.md files without any third-party GitHub Community Repository Tools, except Google.
 
 # 🌍 Automated README Translation with Google Gemini AI
 This MIT open-source tutorial teaches you how to include or add the **Google Gemini API** through Google AI Studio to translate `README.md` into multiple languages automatically using GitHub Actions.
@@ -209,12 +209,12 @@ Run mkdir -p languages
   shell: /usr/bin/bash -e {0}
 0s
 Run node scripts/translate-readme.mjs
-file:///home/runner/work/Markup-Translator-Google-Gemini/Markup-Translator-Google-Gemini/scripts/translate-readme.mjs:14
+file:///home/runner/work/Markdown-Translator-Google-Gemini-Template/Markdown-Translator-Google-Gemini-Template/scripts/translate-readme.mjs:14
   throw new Error("GEMINI_API_KEY is missing.");
         ^
 REPLACE IT WITH YOUR API KEY!!!!!!
 Error: GEMINI_API_KEY is missing.
-    at file:///home/runner/work/Markup-Translator-Google-Gemini/Markup-Translator-Google-Gemini/scripts/translate-readme.mjs:14:9
+    at file:///home/runner/work/Markdown-Translator-Google-Gemini-Template/Markdown-Translator-Google-Gemini-Template/scripts/translate-readme.mjs:14:9
     at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
     at async node:internal/modules/esm/loader:647:26
     at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
