@@ -1,0 +1,3 @@
+# Your translated README.md is translated into Russian based on the region ru... based on the filename README.ru.md
+## It Will Repeat If Asked To Translate More Than 1 Language...
+## THIS IS A SAMPLE OF WHERE THE FILES WILL BE!
